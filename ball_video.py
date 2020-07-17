@@ -68,8 +68,8 @@ def detect_ball_in_a_frame(image_frame):
     draw_ball_contour(binary_image_mask, rgb_image,contours)
 
 def main():
-    #video_capture = cv2.VideoCapture(0)
-    video_capture = cv2.VideoCapture('video/tennis-ball-video.mp4')
+    video_capture = cv2.VideoCapture(0)  #for live tracking
+    #video_capture = cv2.VideoCapture('video path') #for tracking in a recorded video
 
     while(True):
         ret, frame = video_capture.read()
@@ -83,8 +83,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
